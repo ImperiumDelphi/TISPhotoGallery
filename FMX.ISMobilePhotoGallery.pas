@@ -51,6 +51,8 @@ type
          Property OnError       : TNotifyEvent Read FOnError       Write FOnError;
       End;
 
+Procedure Register;
+
 implementation
 
 { TISPhotoGallery }
@@ -133,6 +135,11 @@ Else
    if Assigned(FOnError) then FOnError(Self);
 end;
 {$ENDIF}
+
+Procedure Register;
+Begin
+RegisterComponents('Imperium Delphi', [TISPhotoGallery]);
+End;
 
 Initialization
 RegisterFMXClasses([TISPhotoGallery]);
